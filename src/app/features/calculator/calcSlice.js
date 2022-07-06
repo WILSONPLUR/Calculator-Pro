@@ -4,8 +4,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const calculatorReducer = createSlice({
   initialState: {
     nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].reverse(),
-    actions: ["=", "+", "/", "*", "-", "<"].reverse(),
-    additionalActions: ["AC", "%"],
+    actions: ["=", "+", "*", "-", "/"].reverse(),
+    additionalActions: ["AC", "%", "<"],
     result: 0,
   },
   name: "calculator",

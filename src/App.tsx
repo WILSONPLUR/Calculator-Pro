@@ -22,17 +22,28 @@ function App() {
         <div className="calculator-content__result">
           <input value={result.toString()} disabled className="result" />
         </div>
+        <div className="calculator-content__additional">
+          {additionalActions.map((action, id) => (
+            <>
+              {action === "/" ? (
+                <Button
+                  key={id}
+                  color="orange"
+                  action={() => dispatch(addAction(action))}
+                  text={action.toString()}
+                />
+              ) : (
+                <Button
+                  key={id}
+                  color="lightgray"
+                  action={() => dispatch(addAction(action))}
+                  text={action.toString()}
+                />
+              )}
+            </>
+          ))}
+        </div>
         <div className="calculator-content_buttons">
-          <div className="calculator-content__additional">
-            {additionalActions.map((action, id) => (
-              <Button
-                key={id}
-                color="lightgray"
-                action={() => dispatch(addAction(action))}
-                text={action.toString()}
-              />
-            ))}
-          </div>
           <div className="calculator-content__part">
             <div className="calculator-content__nums">
               {nums.map((num, id) => (
